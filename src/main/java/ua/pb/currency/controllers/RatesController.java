@@ -1,4 +1,4 @@
-package ua.pb.currency.controller;
+package ua.pb.currency.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
