@@ -1,4 +1,4 @@
-package ua.pb.currency.model;
+package ua.pb.currency.dao;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
