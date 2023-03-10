@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new currency transaction</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/transactions}" th:object="${newTransaction}">
+    <label for="operation">Choose operation:</label>
+    <input type="text" th:field="*{operation}" id="operation"/>
+    <br/>
+    <label for="ccy">Select currency</label>
+    <input type="text" th:field="*{ccy}" id="ccy"/>
+    <br/>
+    <label for="rate">Current currency rates</label>
+    <input type="number" th:field="*{rate}" id="rate"/>
+    <br/>
+    <label for="inVal">Input value for exchange:</label>
+    <input type="number" th:field="*{inVal}" id="inVal"/>
+    <br/>
+    <label for="inUAH">UAH:</label>
+    <input type="number" th:field="*{inUAH}" id="inUAH"/>
+    <br/>
+    <input type="submit" value="Add"/>
+</form>
+
+<a href="http://localhost:8080">Start Page</a>
+</body>
+</html>

@@ -49,4 +49,8 @@ public class TransactionsDao {
                 .orElse(null);
     }
 
+    public void save(Transaction newTransaction) {
+        newTransaction.setId(++ID_COUNT);
+        transactions.add(newTransaction);
+    }
 }

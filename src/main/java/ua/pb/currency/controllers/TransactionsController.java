@@ -4,9 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ua.pb.currency.dao.TransactionsDao;
+import ua.pb.currency.models.Transaction;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,7 +23,7 @@ public class TransactionsController {
         this.transactionsDao = transactionsDao;
     }
 
-    @GetMapping("/list")
+    @GetMapping()
     public String list(Model model) {
         model.addAttribute("list", transactionsDao.getAllTransactions());
         return "transactions/list";
@@ -40,6 +43,18 @@ public class TransactionsController {
         System.out.println("ccy: " + ccy + ", date: " + date);
 
         return "transactions/delete";
+    }
+
+    @GetMapping("/new")
+    public String createNewTransaction(Model model) {
+        model.addAttribute("newTransaction", new Transaction());
+        return "transactions/new";
+    }
+
+    @PostMapping()
+    public String addNewTransaction(@ModelAttribute("newTransaction") Transaction transaction) {
+        transactionsDao.save(transaction);
+        return "redirect:/transactions";
     }
 
 }
