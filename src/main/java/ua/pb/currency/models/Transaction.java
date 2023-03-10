@@ -3,6 +3,7 @@ package ua.pb.currency.models;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalTime;
 import java.util.Calendar;
@@ -10,6 +11,7 @@ import java.util.Calendar;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 public class Transaction {
     private int id;
     private Calendar date;

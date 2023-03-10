@@ -6,11 +6,15 @@
 </head>
 <body>
 Form for search transaction with id
-
+<br/>
 <a href="http://localhost:8080">Start Page</a>
 
 <p th:text="${find.getId()}">VALUE</p>
+<p th:text="${find.getDate()}">VALUE</p>
+<p th:text="${find.getTime()}">VALUE</p>
 <p th:text="${find.getOperation()}">VALUE</p>
 <p th:text="${find.getCcy()}">VALUE</p>
+<p th:text="${find.getInVal}">VALUE</p>
+<p th:text="${find.getInUAH}">VALUE</p>
 </body>
 </html>
